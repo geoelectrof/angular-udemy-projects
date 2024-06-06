@@ -1,0 +1,15 @@
+<div>
+    <label>Title</label>
+    <input [(ngModel)]="title">
+    <label>Author</label>
+    <input [(ngModel)]="author">
+    <button (click)="addBook()">Add book</button>
+</div>
+<div>
+    <ul>
+        <li *ngFor="let book of booksList">
+            Title: {{book.title}}
+            Author: {{book.author}}
+        </li>
+    </ul>
+</div>
