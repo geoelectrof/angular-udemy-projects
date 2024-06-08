@@ -7,9 +7,10 @@
 </div>
 <div>
     <ul>
-        <li *ngFor="let book of booksList">
+        <li *ngFor="let book of booksList, index as i">
             Title: {{book.title}}
             Author: {{book.author}}
+            <button (click)="deleteBook(i)">Delete</button>
         </li>
     </ul>
 </div>

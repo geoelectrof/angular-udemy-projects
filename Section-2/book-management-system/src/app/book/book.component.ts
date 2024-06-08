@@ -16,10 +16,9 @@ booksList: BookModel[] = []
 ngOnInit(): void {
     const books = localStorage.getItem("Books")
     this.booksList = books ? JSON.parse(books) : []
-}
+} 
 
 addBook() {
-
   const id: number = Date.now()
   
   const newBook: BookModel = {
@@ -27,13 +26,17 @@ addBook() {
     title: this.title,
     author: this.author
   }
-  this.booksList.push(newBook)
 
+  this.booksList.push(newBook)
   this.title = ''
   this.author = ''
 
   localStorage.setItem("Books", JSON.stringify(this.booksList))
+}
 
+deleteBook(i: number){
+  this.booksList.splice(i, 1)
+  localStorage.setItem('Books', JSON.stringify(this.booksList));
 }
 
 }
